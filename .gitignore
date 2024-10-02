@@ -1,0 +1,4 @@
+# compiled output
+certi-net/dist
+certi-net/node_modules
+certi-net/build

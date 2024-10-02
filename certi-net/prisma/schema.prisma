@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+
+model Certifcate_db {
+  id                  Int       @id @default(autoincrement())
+  uuid_cert           String    @unique
+  domain              String
+  date_creation       DateTime?
+  status              String
+  client_ip           String
+  client_auth         String[]
+  cert_client_path    String
+  cert_server_path    String
+  nameserver          String
+  tenant              String
+}
